@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.youban.service.sys.mapper.SysDeptDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.SysDept">
+		<id column="dept_id" property="deptId" />
+		<result column="parent_id" property="parentId" />
+		<result column="name" property="name" />
+		<result column="order_num" property="orderNum" />
+		<result column="del_flag" property="delFlag" />
+	</resultMap>
+
+
+	<select id="queryList" resultMap="BaseResultMap">
+		select d.*,(select p.name from sys_dept p where p.dept_id = d.parent_id) as parentName
+		from sys_dept d where d.del_flag = 0
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by d.${sidx} ${order}
+            </when>
+			<otherwise>
+                order by d.order_num asc
+			</otherwise>
+        </choose>
+	</select>
+	
+	<select id="queryDetpIdList" resultType="long">
+		select dept_id from sys_dept where parent_id = #{value} and del_flag = 0
+	</select>
+
+</mapper>

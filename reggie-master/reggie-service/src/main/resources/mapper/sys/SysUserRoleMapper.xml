@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.youban.service.sys.mapper.SysUserRoleDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.SysUserRole">
+		<id column="id" property="id" />
+		<result column="user_id" property="userId" />
+		<result column="role_id" property="roleId" />
+	</resultMap>
+
+
+<select id="queryList" resultMap="BaseResultMap">
+		select * from sys_user_role 
+		<where>
+			<if test="userId != null">
+				user_id = #{userId}
+			</if>
+		</where>
+	</select>
+ 
+	<insert id="save">
+		insert into sys_user_role
+		(
+			`user_id`, 
+			`role_id`
+		)
+		values
+		<foreach collection="roleIdList" item="item" index="index" separator="," >
+		(
+			#{userId}, 
+			#{item}
+		)
+		</foreach>
+	</insert>
+	
+	<delete id="deleteByUserId">
+		delete from sys_user_role where user_id = #{value}
+	</delete>
+	
+	<select id="queryRoleIdList" resultType="long">
+		select role_id from sys_user_role where user_id = #{value}
+	</select>
+
+</mapper>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sz.youban</groupId>
+  <artifactId>reggie-master</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>reggie-common</module>
+    <module>reggie-entity</module>
+    <module>reggie-service</module>
+    <module>reggie-interface</module>
+    <module>reggie-console</module>
+  </modules>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <mybatis.spring.boot.starter.version>1.3.0</mybatis.spring.boot.starter.version>
+    <cglib.version>3.2.4</cglib.version>
+    <jacksonAsl.version>1.9.13</jacksonAsl.version>
+    <mybatis-plus.version>2.1.6</mybatis-plus.version>
+    <shiro.core.version>1.2.2</shiro.core.version>
+    <shiro.version>1.2.3</shiro.version>
+    <kaptcha.version>0.0.9</kaptcha.version>
+    <quartz.version>2.3.0</quartz.version>
+    <commons.lang.version>2.6</commons.lang.version>
+  </properties>
+  
+   <parent>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>1.5.2.RELEASE</version>
+	    <relativePath/>
+  	</parent>
+  
+ 	<dependencies>
+	     <dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-web</artifactId>
+	     <!-- 移除嵌入式tomcat插件 -->
+	<!-- 	   <exclusions>
+	        <exclusion>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-starter-tomcat</artifactId>
+	        </exclusion>
+	    </exclusions> --> 
+	    </dependency>
+	   
+	    
+	</dependencies>
+  
+</project>

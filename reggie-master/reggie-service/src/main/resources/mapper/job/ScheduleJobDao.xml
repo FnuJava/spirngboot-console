@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sz.youban.service.job.mapper.ScheduleJobDao">
+
+    <!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.ScheduleJob">
+		<id column="job_id" property="jobId" />
+		<result column="bean_name" property="beanName" />
+		<result column="method_name" property="methodName" />
+		<result column="params" property="params" />
+		<result column="cron_expression" property="cronExpression" />
+		<result column="status" property="status" />
+		<result column="remark" property="remark" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+	
+	<select id="queryPageList" parameterType="map" resultMap="BaseResultMap" >
+		select * from schedule_job
+		<where>
+			<if test="beanName != null and beanName.trim() != ''">
+				bean_name like concat('%', #{beanName}, '%') 
+			</if>
+		</where>
+	</select>
+	
+	<!-- <select id="queryList" resultType="ScheduleJob" >
+		select * from schedule_job
+		<where>
+			<if test="beanName != null and beanName.trim() != ''">
+				bean_name like concat('%', #{beanName}, '%') 
+			</if>
+		</where>
+	</select> -->
+	
+	<!-- 批量更新状态 -->
+	<update id="updateBatch"> 
+		update schedule_job set status = #{status} where job_id in 
+		<foreach item="jobId" collection="list"  open="(" separator="," close=")">
+			#{jobId}
+		</foreach>
+	</update>
+	
+	<delete id="deleteBatch">
+		delete from schedule_job where job_id in 
+		<foreach item="jobId" collection="array" open="(" separator="," close=")">
+			#{jobId}
+		</foreach>
+	</delete>
+	
+</mapper>

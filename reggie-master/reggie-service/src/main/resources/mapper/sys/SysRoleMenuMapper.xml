@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.youban.service.sys.mapper.SysRoleMenuDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.SysRoleMenu">
+		<id column="id" property="id" />
+		<result column="role_id" property="roleId" />
+		<result column="menu_id" property="menuId" />
+	</resultMap>
+
+
+	<insert id="save">
+		insert into sys_role_menu
+		(
+			`role_id`, 
+			`menu_id`
+		)
+		values
+		<foreach collection="menuIdList" item="item" index="index" separator="," >
+		(
+			#{roleId}, 
+			#{item} 
+		)
+		</foreach>
+	</insert>
+	
+	<delete id="deleteByRoleId">
+		delete from sys_role_menu where role_id = #{value}
+	</delete>
+	
+	<select id="queryMenuIdList" resultType="long">
+		select menu_id from sys_role_menu where role_id = #{value}
+	</select>
+	
+</mapper>

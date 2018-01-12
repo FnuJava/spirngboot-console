@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.youban.service.sys.mapper.SysRoleDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.SysRole">
+		<id column="role_id" property="roleId" />
+		<result column="role_name" property="roleName" />
+		<result column="remark" property="remark" />
+		<result column="dept_id" property="deptId" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+
+
+<select id="queryPageList" resultMap="BaseResultMap">
+		select r.*, (select d.name from sys_dept d where d.dept_id = r.dept_id) deptName from sys_role r
+		<where>
+			<if test="roleName != null and roleName.trim() != ''">
+				and r.`role_name` like concat('%',#{roleName},'%')
+			</if>
+			<!--  数据过滤  -->
+			<!-- ${filterSql} -->
+		</where>
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by r.${sidx} ${order}
+			</when>
+			<otherwise>
+				order by r.role_id asc
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="queryList" resultMap="BaseResultMap">
+		select r.*, (select d.name from sys_dept d where d.dept_id = r.dept_id) deptName from sys_role r
+		<where>
+			<if test="roleName != null and roleName.trim() != ''">
+				and r.`role_name` like concat('%',#{roleName},'%')
+			</if>
+			<!--  数据过滤  -->
+			<!-- ${filterSql} -->
+		</where>
+	</select>
+	
+	<delete id="deleteBatch">
+		delete from sys_role where role_id in 
+		<foreach item="roleId" collection="array" open="(" separator="," close=")">
+			#{roleId}
+		</foreach>
+		;
+		delete from sys_role_menu where role_id in 
+		<foreach item="roleId" collection="array" open="(" separator="," close=")">
+			#{roleId}
+		</foreach>
+		;
+		delete from sys_role_dept where role_id in
+		<foreach item="roleId" collection="array" open="(" separator="," close=")">
+			#{roleId}
+		</foreach>
+		;
+		delete from sys_user_role where role_id in 
+		<foreach item="roleId" collection="array" open="(" separator="," close=")">
+			#{roleId}
+		</foreach>
+	</delete>
+</mapper>

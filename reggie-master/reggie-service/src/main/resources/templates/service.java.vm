@@ -1,0 +1,16 @@
+package ${package.Service.substring(46)};
+
+import ${package.Entity.substring(43)}.${entity};
+import ${superServiceClassPackage};
+
+/**
+ * <p>
+ * ${table.comment} 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+	
+}

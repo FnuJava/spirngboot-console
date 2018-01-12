@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.youban.service.sys.mapper.SysUserTokenDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.SysUserToken">
+		<id column="user_id" property="userId" />
+		<result column="token" property="token" />
+		<result column="expire_time" property="expireTime" />
+		<result column="update_time" property="updateTime" />
+	</resultMap>
+
+
+	<select id="queryByToken" resultMap="BaseResultMap">
+		select * from sys_user_token where token = #{value}
+	</select>
+</mapper>
