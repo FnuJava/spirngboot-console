@@ -38,6 +38,8 @@ public class SysLogController extends BaseController {
 	@RequestMapping("/list")
 	@RequiresPermissions("sys:log:list")
 	public R list(@RequestParam Map<String, Object> params){
+		logger.info("cdcc");
+		logger.error("dddddd");
 		//查询列表数据
 		Query query = new Query(params);
 		Page<SysLog> pageUtil = new Page<SysLog>(query.getPage(), query.getLimit());
