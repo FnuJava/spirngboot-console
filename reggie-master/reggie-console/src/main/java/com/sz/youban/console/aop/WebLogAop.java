@@ -15,8 +15,8 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.sz.youban.common.utils.httpcontent.HttpContextUtils;
 import com.sz.youban.common.utils.ip.IPUtils;
-import com.sz.youban.console.util.HttpContextUtils;
 import com.sz.youban.entity.SysLog;
 import com.sz.youban.entity.SysUser;
 import com.sz.youban.myinterface.sys.SysLogService;

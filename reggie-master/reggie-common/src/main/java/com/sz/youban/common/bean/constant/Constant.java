@@ -10,6 +10,16 @@ package com.sz.youban.common.bean.constant;
 public class Constant {
 	/** 超级管理员ID */
 	public static final int SUPER_ADMIN = 1;
+	
+	 /**
+     * 存放terminal的header字段
+     */
+    public static final String TERMINAL = "terminal";
+    
+    /**
+     * 存放CLIENTID的header字段
+     */
+    public static final String CLIENTID = "clientId";
 
 	/**
 	 * 菜单类型

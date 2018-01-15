@@ -1,4 +1,4 @@
-package com.sz.youban.console.util;
+package com.sz.youban.common.utils.httpcontent;
 
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

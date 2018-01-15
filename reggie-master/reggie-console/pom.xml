@@ -25,22 +25,11 @@
      		<version>0.0.1-SNAPSHOT</version>
 		</dependency>  
 	    
-	    <dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <scope>provided</scope>
-		</dependency>
 	    
 	    <dependency>
       		<groupId>org.springframework.boot</groupId>
      		<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-	    
-	    <!--Redis-->
-	    <dependency> 
-	      <groupId>org.springframework.boot</groupId>
-	      <artifactId>spring-boot-starter-data-redis</artifactId>
-	    </dependency>
 	    
 	    <dependency>
 		    <groupId>commons-io</groupId>
@@ -52,27 +41,7 @@
 		    <artifactId>json-lib-ext-spring</artifactId>
 		    <version>1.0.2</version>
 		</dependency>
-		<dependency>
-		    <groupId>net.sourceforge.jexcelapi</groupId>
-		    <artifactId>jxl</artifactId>
-		    <version>2.6.12</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.itextpdf</groupId>
-		    <artifactId>itextpdf</artifactId>
-		    <version>5.5.11</version>
-		</dependency>
-		<dependency>
-		    <groupId>commons-fileupload</groupId>
-		    <artifactId>commons-fileupload</artifactId>
-		    <version>1.3.2</version>
-		</dependency>
-		<dependency>  
-            <groupId>org.springframework.boot</groupId>  
-            <artifactId>spring-boot-devtools</artifactId>  
-            <optional>true</optional>  
-		  </dependency> 
-		  
+	
 		<dependency>  
 		    <groupId>org.apache.shiro</groupId>  
 		    <artifactId>shiro-core</artifactId>  
@@ -107,22 +76,22 @@
 		</dependency>  
 			<!-- 包含支持UI模版（Velocity，FreeMarker，JasperReports）， 邮件服务， 脚本服务(JRuby)， 缓存Cache（EHCache），   
             任务计划Scheduling（uartz）。 -->  
-    <dependency>  
-        <groupId>org.springframework</groupId>  
-        <artifactId>spring-context-support</artifactId>  
-    </dependency> 
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-context-support</artifactId>  
+	    </dependency> 
     
     
-    <dependency>
+   		<dependency>
 			<groupId>com.github.axet</groupId>
 			<artifactId>kaptcha</artifactId>
 			<version>${kaptcha.version}</version>
 		</dependency>
 		
 		<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-devtools</artifactId>
-</dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 		
   </dependencies>
   <build>
