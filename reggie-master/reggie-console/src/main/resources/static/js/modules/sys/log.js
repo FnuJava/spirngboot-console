@@ -22,10 +22,10 @@ $(function () {
         multiselect: false,
         pager: "#jqGridPager",
         jsonReader : {
-        	root: "page.records",
-            page: "page.current",
-            total: "page.pages",
-            records: "page.total"
+        	root: "data.page.records",
+            page: "data.page.current",
+            total: "data.page.pages",
+            records: "data.page.total"
         },
         prmNames : {
             page:"page", 

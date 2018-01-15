@@ -16,6 +16,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.sz.youban.common.bean.R;
 import com.sz.youban.common.bean.constant.Constant;
 import com.sz.youban.common.bean.page.Query;
+import com.sz.youban.common.utils.validator.ValidatorUtils;
 import com.sz.youban.console.aop.Log;
 import com.sz.youban.console.controller.base.BaseController;
 import com.sz.youban.entity.SysRole;
@@ -59,7 +60,7 @@ public class SysRoleController extends BaseController {
 		
 		Page<SysRole> page = sysRoleService.queryPageList(pageUtil,query);
 		
-		return R.ok().put("page", page);
+		return okPage(page);
 	}
 	
 	/**
@@ -105,7 +106,7 @@ public class SysRoleController extends BaseController {
 	@RequestMapping("/save")
 	@RequiresPermissions("sys:role:save")
 	public R save(@RequestBody SysRole role){
-	//	ValidatorUtils.validateEntity(role);
+		ValidatorUtils.validateEntity(role);
 		
 		sysRoleService.save(role);
 		
@@ -119,7 +120,7 @@ public class SysRoleController extends BaseController {
 	@RequestMapping("/update")
 	@RequiresPermissions("sys:role:update")
 	public R update(@RequestBody SysRole role){
-		//ValidatorUtils.validateEntity(role);
+		ValidatorUtils.validateEntity(role);
 		
 		sysRoleService.update(role);
 		

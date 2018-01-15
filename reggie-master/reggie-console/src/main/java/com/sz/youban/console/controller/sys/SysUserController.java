@@ -59,7 +59,7 @@ public class SysUserController extends BaseController {
 		Query query = new Query(params);
 		Page<SysUser> pageUtil = new Page<SysUser>(query.getPage(), query.getLimit());
 		Page<SysUser> page = sysUserService.queryPageList(pageUtil,query);
-		return R.ok().put("page", page);
+		return okPage(page);
 	}
 	
 	/**

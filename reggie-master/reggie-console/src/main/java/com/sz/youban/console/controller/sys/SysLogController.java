@@ -1,5 +1,6 @@
 package com.sz.youban.console.controller.sys;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -40,10 +41,9 @@ public class SysLogController extends BaseController {
 		//查询列表数据
 		Query query = new Query(params);
 		Page<SysLog> pageUtil = new Page<SysLog>(query.getPage(), query.getLimit());
-		
 		Page<SysLog> page = sysLogService.selectPageList(pageUtil,query);
 		
-		return R.ok().put("page", page);
+		return okPage(page);
 	}
 	
 }

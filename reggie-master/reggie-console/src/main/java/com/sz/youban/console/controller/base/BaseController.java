@@ -1,9 +1,14 @@
 package com.sz.youban.console.controller.base;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.baomidou.mybatisplus.plugins.Page;
+import com.sz.youban.common.bean.R;
 import com.sz.youban.entity.SysUser;
 
 /**
@@ -27,6 +32,12 @@ public abstract class BaseController {
 
 	protected Long getDeptId() {
 		return getUser().getDeptId();
+	}
+	
+	protected R okPage(Page<?> page) {
+		Map<String,Object> result = new HashMap<>();
+		result.put("page", page);
+		return R.ok(result);
 	}
 	
 }

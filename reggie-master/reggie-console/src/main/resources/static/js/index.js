@@ -118,7 +118,6 @@ function routerList(router, menuList){
 		if(menu.type == 0){
 			routerList(router, menu.list);
 		}else if(menu.type == 1){
-			console.log(1);
 			router.add('#'+menu.url, function() {
 				var url = window.location.hash;
 				
