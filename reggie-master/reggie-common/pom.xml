@@ -147,6 +147,13 @@
 			<artifactId>commons-lang</artifactId>
 			<version>${commons.lang.version}</version>
 		</dependency>
+		
+		<!-- 分布式配置管理  https://github.com/ihaolin/diablo -->
+		<dependency>
+		     <groupId>me.hao0</groupId>
+		     <artifactId>diablo-client</artifactId>
+		     <version>1.2.3</version>
+ 		</dependency>
 
 	</dependencies>
 </project>
