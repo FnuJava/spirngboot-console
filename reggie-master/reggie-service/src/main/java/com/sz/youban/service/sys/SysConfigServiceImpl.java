@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.google.gson.Gson;
 import com.sz.youban.common.utils.redis.SysConfigRedis;
 import com.sz.youban.entity.SysConfig;
+import com.sz.youban.myinterface.sys.CloudStorageConfig;
 import com.sz.youban.myinterface.sys.SysConfigService;
 import com.sz.youban.service.sys.mapper.SysConfigDao;
 
@@ -55,7 +57,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfig> i
 		return config == null ? null : config.getValue();
 	}
 
-/*	@Override
+	@Override
 	@Transactional
 	public CloudStorageConfig getConfigObject(String key, Class<CloudStorageConfig> clazz) {
 		String value = getValue(key);
@@ -68,6 +70,6 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfig> i
 		} catch (Exception e) {
 			throw new RuntimeException("获取参数失败");
 		}
-	}*/
+	}
 	
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sz.youban.service.oss.mapper.SysOssDao">
+
+    <!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.sz.youban.entity.SysOss">
+		<id column="id" property="id" />
+		<result column="url" property="url" />
+		<result column="create_date" property="createDate" />
+	</resultMap>
+
+	<select id="queryPageList" parameterType="map" resultMap="BaseResultMap">
+		select * from sys_oss order by id desc
+	</select>
+		
+	<delete id="deleteBatch">
+		delete from sys_oss where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

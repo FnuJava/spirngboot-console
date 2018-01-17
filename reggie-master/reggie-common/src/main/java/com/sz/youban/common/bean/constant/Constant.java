@@ -20,6 +20,7 @@ public class Constant {
      * 存放CLIENTID的header字段
      */
     public static final String CLIENTID = "clientId";
+    
 
 	/**
 	 * 菜单类型
@@ -96,8 +97,11 @@ public class Constant {
         /**
          * 腾讯云
          */
-        QCLOUD(3);
-
+        QCLOUD(3),
+        /**
+         * 本地上传
+         */
+        NATIVE(4);
         private int value;
 
         private CloudService(int value) {

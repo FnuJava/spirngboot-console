@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 import com.sz.youban.entity.SysConfig;
 
+
 /**
  * <p>
  * 系统配置信息表 服务类
@@ -29,6 +30,8 @@ public interface SysConfigService extends IService<SysConfig> {
 	 * @param key           key
 	 */
 	public String getValue(String key);
+	
+	public CloudStorageConfig getConfigObject(String key, Class<CloudStorageConfig> clazz);
 
 	
 }

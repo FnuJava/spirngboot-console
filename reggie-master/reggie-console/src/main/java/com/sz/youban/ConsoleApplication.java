@@ -7,8 +7,9 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.sz.youban.common.config.SpringDiabloClient.MyAppConfig;
 
 
 @EnableTransactionManagement 
@@ -26,5 +27,9 @@ public class ConsoleApplication extends SpringBootServletInitializer{
 	 public static void main(String[] args) {
 		 
 		 ConfigurableApplicationContext conten =  SpringApplication.run(ConsoleApplication.class, args);
+		// MyAppConfig myAppConfig = conten.getBean(MyAppConfig.class);
+		 
+		// System.err.println(myAppConfig.getTest_config1());
+		
 	 }
 }
