@@ -3,6 +3,8 @@ $.jgrid.defaults.width = 1000;
 $.jgrid.defaults.responsive = true;
 $.jgrid.defaults.styleUI = 'Bootstrap';
 
+
+ 
 //工具集合Tools
 window.T = {};
 

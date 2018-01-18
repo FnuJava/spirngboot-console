@@ -95,11 +95,10 @@ public class SysOssController extends BaseController {
 			//校验腾讯云数据
 			ValidatorUtils.validateEntity(config, QcloudGroup.class);
 		}
-		
 
         sysConfigService.updateValueByKey(KEY, new Gson().toJson(config));
-
-		return R.ok();
+		
+        return R.ok();
 	}
 	
 

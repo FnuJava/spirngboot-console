@@ -25,7 +25,7 @@ import me.hao0.diablo.common.util.CollectionUtil;
  * Author: haolin
  * Email:  haolin.h0@gmail.com
  */
-@Configuration
+//@Configuration
 public class SpringDiabloClient extends AbstractDiabloClient implements InitializingBean, DisposableBean {
 
     /**

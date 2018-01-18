@@ -1,4 +1,17 @@
 $(function () {
+	
+	 $('#datetimepicker1,#datetimepicker2').datetimepicker({ 
+		 format: 'YYYY-MM-DD', 
+		 locale: moment.locale('zh-cn') 
+	 }); 
+
+	//多选
+    $("#sel_menu2").select2({
+    	language: "zh-CN",
+    	//width: "80%", //设置下拉框的宽度
+    	placeholder: "全部"
+    });
+	
     $("#jqGrid").jqGrid({
         url: baseURL + 'sys/log/list',
         datatype: "json",

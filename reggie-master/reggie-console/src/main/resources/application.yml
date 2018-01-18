@@ -36,7 +36,10 @@ spring:
             max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
             max-idle: 20      # 连接池中的最大空闲连接
             min-idle: 5       # 连接池中的最小空闲连接
-
+    devtools:
+      restart:
+        exclude: views/**,static/js/**   # 排除自启动的目录  
+ 
 #mybatis
 mybatis:
   mapper-locations: classpath*:mapper/*/*Mapper.xml
