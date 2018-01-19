@@ -9,8 +9,10 @@ springboot-console基于jeefast:https://gitee.com/theodo/jeefast 进行改造。
 - 使用quartz定时任务，可动态完成任务的添加、修改、删除、暂停、恢复、运行日志查看功能
 - 页面交互使用Vue2.x，极大的提高了开发效率
 - 使用Hibernate Validator校验框架，轻松实现后端校验
+- 整合mybatis-plus，自动生成dao、entity、mapper、service、serviceImpl文件
 - 使用很多优秀第三方工具：如http://feilong-core.mydoc.io/ 飞龙工具包。
-- 整合分布式配置管理平台(Distributed Configuration Management Platform)：https://github.com/ihaolin/diablo 对Propertie属性文件统一管     理。
+- 整合分布式配置管理平台(Distributed Configuration Management Platform)：https://github.com/ihaolin/diablo 对Propertie属性文件统一管理。
+- lombok插件御用
 ## 技术选型：
 - 核心框架：Spring Boot 1.5
 - 安全框架：Apache Shiro 1.3
@@ -35,6 +37,12 @@ springboot-console基于jeefast:https://gitee.com/theodo/jeefast 进行改造。
 - 项目访问路径：http://localhost:8080/jeefast
 - 账号密码：admin/123456
 
+## 自动生成代码说明
+- reggie-service项目地下的MpGenerator.java。
+- 如果生成的代码文件名路径有问题，可以改下模板的substring数值。因为我这个是maven多模块的。路径跟你的文件夹位置有关系。调整一次以后就都没问题   了。
+  ![图片说明](https://github.com/FnuJava/spirngboot-console/blob/master/reggie-master/auto.png)
+
+
 ## 效果图
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212319_6de26405_718698.jpeg "登录.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212334_a2f6eff7_718698.jpeg "系统首页.jpg")
@@ -43,5 +51,5 @@ springboot-console基于jeefast:https://gitee.com/theodo/jeefast 进行改造。
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212423_eb914cfe_718698.jpeg "菜单管理.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212432_e3e5cc82_718698.jpeg "定时任务.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212443_45d06e1f_718698.jpeg "系统日志.jpg")
-![输入图片说明](https://gitee.com/uploads/images/2017/1103/092032_4d28ccb5_718698.jpeg "swagger.jpg")
+
 
