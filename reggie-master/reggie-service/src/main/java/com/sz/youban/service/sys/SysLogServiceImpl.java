@@ -31,4 +31,10 @@ public class SysLogServiceImpl extends ServiceImpl<SysLogDao, SysLog> implements
 		return page;
 	}
 	
+	public class  Inner{
+		public  int  a = 3;
+		
+		
+	}
+	
 }
