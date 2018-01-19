@@ -1,5 +1,5 @@
 ## 平台简介
-JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点设计融于一体的快速开发平台。平台内置 用户管理、部门管理、角色管理、菜单管理、日志管理、数据源监控、定时任务 等功能。
+springboot-console基于jeefast:https://gitee.com/theodo/jeefast 进行改造。平台内置 用户管理、部门管理、角色管理、菜单管理、日志管理、数据源监控、定时任务 等功能。
 
 ## 具有如下特点
 - 友好的代码结构及注释，便于阅读及二次开发
@@ -9,29 +9,29 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 - 使用quartz定时任务，可动态完成任务的添加、修改、删除、暂停、恢复、运行日志查看功能
 - 页面交互使用Vue2.x，极大的提高了开发效率
 - 使用Hibernate Validator校验框架，轻松实现后端校验
-- 使用swagger2支持，方便使用API接口文档
-
-## 如何交流、反馈、参与贡献？
-- Git仓库：https://gitee.com/theodo/jeefast
-- QQ交流群：583154815
-- 如需关注项目最新动态，请Watch、Star项目
-
+- 使用很多优秀第三方工具：如http://feilong-core.mydoc.io/ 飞龙工具包。
+- 整合分布式配置管理平台(Distributed Configuration Management Platform)：https://github.com/ihaolin/diablo 对Propertie属性文件统一管     理。
 ## 技术选型：
 - 核心框架：Spring Boot 1.5
 - 安全框架：Apache Shiro 1.3
-- 持久层框架：MyBatis 3.4.5、mybatis-plus 2.1.4
+- 持久层框架：MyBatis 3.4.5、mybatis-plus 2.1.6
 - 定时器：Quartz 2.3
 - 数据库连接池：Druid 1.1.3
 - 日志管理：SLF4J 1.7、Log4j
 - 页面交互：Vue2.x
 - CSS框架：Twitter Bootstrap
 
+## 分布式配置管理平台使用说明
+- https://github.com/ihaolin/diablo下载项目或是直接下载或下载最新的压缩包，tomcat下运行部署。
+  ![图片说明](https://github.com/FnuJava/spirngboot-console/blob/master/reggie-master/pro.png)
+- 如果不想用这个功能可以先把com.sz.youban.common.config.SpringDiabloClient目录下的@Configuration注解注释掉！！！！
+
 ## 本地部署
 - 通过git下载源码
 - 创建数据库jeefast，数据库编码为UTF-8
 - 执行doc/db.sql文件，初始化数据
 - 修改application-dev.yml，更新MySQL账号和密码
-- Eclipse运行jeefast-system工程JeeFastSystemApplication.java，则可启动项目
+- Eclipse运行reggie-console工程ConsoleApplication.java，则可启动项目
 - 项目访问路径：http://localhost:8080/jeefast
 - 账号密码：admin/123456
 
